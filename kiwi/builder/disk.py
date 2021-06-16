@@ -272,7 +272,7 @@ class DiskBuilder:
 
         # create luks on current root device if requested
         luks_root = None
-        if self.luks:
+        if self.luks is not None:
             luks_root = LuksDevice(device_map['root'])
             self.luks_boot_keyname = '/.root.keyfile'
             self.luks_boot_keyfile = ''.join(
